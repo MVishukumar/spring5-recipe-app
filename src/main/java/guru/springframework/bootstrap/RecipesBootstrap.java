@@ -209,6 +209,8 @@ public class RecipesBootstrap implements ApplicationListener<ContextRefreshedEve
         recipes.add(tacosRecipe);
 
         System.out.println("Total Recipes added:" + recipes.size());
+        log.debug("########################Total Recipes added:" + recipes.size());
+        log.info("########################Total Recipes added:" + recipes.size());
         return recipes;
     }
 }
