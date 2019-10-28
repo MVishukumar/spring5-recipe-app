@@ -5,6 +5,7 @@ import guru.springframework.repositories.RecipeRepository;
 import org.springframework.stereotype.Component;
 
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 
 @Component
@@ -27,5 +28,16 @@ public class RecipeServiceImpl implements RecipeService {
         System.out.println("recipes.size()" + recipes.size());
         return recipes;
 
+    }
+
+    @Override
+    public Recipe findById(Long l) {
+        Optional<Recipe> recipe = recipeRepository.findById(l);
+
+        if(!recipe.isPresent()) {
+            throw new RuntimeException("Recipe with ID:" + l + " is not available. Please contact admin");
+        }
+
+        return recipe.get();
     }
 }

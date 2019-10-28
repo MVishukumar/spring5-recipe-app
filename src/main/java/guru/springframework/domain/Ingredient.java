@@ -64,5 +64,11 @@ public class Ingredient {
         this.recipe = recipe;
     }
 
+    public UnitOfMeasure getUnitOfMeasure() {
+        return unitOfMeasure;
+    }
 
+    public void setUnitOfMeasure(UnitOfMeasure unitOfMeasure) {
+        this.unitOfMeasure = unitOfMeasure;
+    }
 }
